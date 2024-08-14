@@ -18,7 +18,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.className}  `}>
+      <body className={`${inter.className} bg-slate-100 `}>
         <div className="flex flex-col justify-center md:mt-16">
           <Navbar />
           <div className="inline-block w-full md:w-3/4 m-auto">

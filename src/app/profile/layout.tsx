@@ -1,17 +1,22 @@
+'use client'
 import Link from "next/link";
 import ProfileImage from '../../Assets/images/profileImage.jpg'
 import Image from "next/image";
+import { redirect } from "next/navigation";
 
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+
+
+
   return (
 
     <div className="flex flex-col py-8 items-center bg-zinc-200 shadow-md w-full ">
 
-        <div className="flex flex-row md:flex-row justify-center items-center md:items-start w-full px-10">
+        <div className="flex flex-row md:flex-row justify-center items-center md:items-start w-full px-10 pb-10">
 
           <div className="pr-5 md:p-0">
             <Image src={ProfileImage} alt="Profile Picture" className=" md:w-[150px] w-[100px] rounded-full" />
@@ -31,7 +36,7 @@ export default function RootLayout({
       
 
         <div className=" text-md font-semibold md:text-lg flex justify-around border-y-2 border-y-cyan-300 bg-gray-100 py-2 shadow-sm w-full ">
-            <button className="flex-1 text-center py-2">Posts</button>
+            <Link href='/profile/posts' className="flex-1 text-center py-2">Posts</Link>
             <Link href='/profile/followers' className="flex-1 text-center py-2">Followers</Link>
             <Link href='/profile/following' className="flex-1 text-center py-2">Following</Link>
             <Link href='/profile/about' className="flex-1 text-center py-2">About</Link>
