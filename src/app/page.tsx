@@ -1,5 +1,5 @@
-import Image from "next/image";
 import ScrollToTop from "../components/ScroolToTop";
+
 
 export default function page() {
   return (
