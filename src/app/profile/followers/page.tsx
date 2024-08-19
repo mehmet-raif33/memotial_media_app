@@ -2,7 +2,7 @@ import React from 'react'
 import ProfileImage from '../../../Assets/images/profileImage.jpg';
 import Image from 'next/image';
 
-const page = () => {
+const Page = () => {
 
   const followers = [
     {
@@ -47,4 +47,4 @@ const page = () => {
   )
 }
 
-export default page;
+export default Page;

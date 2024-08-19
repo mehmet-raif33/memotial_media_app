@@ -6,7 +6,7 @@ import opened from '../../Assets/images/opened.png';
 import { motion, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
 
-const page = () => {
+const Page = () => {
 
   const [isContactsVisible, setIsContactsVisible] = useState(true);
 
@@ -144,4 +144,4 @@ const page = () => {
   )
 }
 
-export default page;
+export default Page;

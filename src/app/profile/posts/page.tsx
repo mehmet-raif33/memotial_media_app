@@ -2,7 +2,7 @@ import React from "react";
 import ProfileImage from "../../../Assets/images/profileImage.jpg";
 import PostSingle from "@/components/PostSingle";
 
-const page = () => {
+const Page = () => {
   interface PostInterface {
     image: string | any;
     postId: number;
@@ -39,4 +39,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;

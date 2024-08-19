@@ -4,7 +4,7 @@ import Youtube from '../../../Assets/images/icons8-youtube-96.png';
 import Tiktok from '../../../Assets/images/icons8-tiktok-96.png';
 import Image from 'next/image';
 
-const page = () => {
+const Page = () => {
 
     
   const about = 'ajsdaksdjl'
@@ -48,4 +48,4 @@ const page = () => {
   )
 }
 
-export default page;
+export default Page;

@@ -7,7 +7,7 @@ import { GoogleLoginButton } from 'react-social-login-buttons';
 import supabase from '../../supabase/info'
 import { useState } from 'react';
 
-const page = () => {
+const Page = () => {
 
   const [datam, setData] = useState('')
 
@@ -50,4 +50,4 @@ const page = () => {
   )
 }
 
-export default page;
+export default Page;

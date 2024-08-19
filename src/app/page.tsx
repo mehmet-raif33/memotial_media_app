@@ -1,7 +1,7 @@
 import ScrollToTop from "../components/ScroolToTop";
 import { redirect } from "next/navigation";
 
-export default function page() {
+export default function Page() {
   redirect('/homepage')
   return (
     <main className="">
