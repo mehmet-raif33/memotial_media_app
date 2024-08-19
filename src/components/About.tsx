@@ -3,6 +3,7 @@ import Facebook from '../Assets/images/icons8-facebook-96.png';
 import Instagram from '../Assets/images/icons8-instagram-96.png';
 import Youtube from '../Assets/images/icons8-youtube-96.png';
 import Tiktok from '../Assets/images/icons8-tiktok-96.png';
+import Image from 'next/image';
 
 const About = () => {
     
@@ -26,16 +27,16 @@ const About = () => {
           <div className='flex flex-row h-20'>
             <div className='grid grid-cols-2 lg:grid-cols-8'>
               <a className='lg:col-span-2 sm:col-span-1 w-16 lg:w-24' href='https://www.facebook.com'target='_blank' >
-                <img src={Facebook} />
+                <Image src={Facebook} alt='asd'/>
               </a>
               <a className='lg:col-span-2 sm:col-span-1 w-16  lg:w-24' href='https://www.youtube.com' target='_blank'>
-                <img src={Youtube} />
+                <Image src={Youtube} alt='asd' />
               </a>   
               <a className='lg:col-span-2 sm:col-span-1 w-16  lg:w-24' href='https://www.tiktok.com' target='_blank'>
-                <img src={Tiktok} />
+                <Image src={Tiktok} alt='asd' />
               </a>
               <a className='lg:col-span-2 sm:col-span-1 w-16  lg:w-24' href='https://www.instagram.com' target='_blank'>
-                <img src={Instagram} />
+                <Image src={Instagram} alt='asd' />
               </a>          
             </div>
 

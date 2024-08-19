@@ -5,7 +5,7 @@ import Image from 'next/image';
 import authGirl from '../../Assets/images/authGirl.jpg'
 import { GoogleLoginButton } from 'react-social-login-buttons';
 import supabase from '../../supabase/info'
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
 const page = () => {
 
@@ -20,13 +20,11 @@ const page = () => {
 
   return (
     <div className='grid grid-flow-col-1 md:grid-cols-2 h-[500px] justify-center'>
-      <div 
-      className="col-span-1 bg-yellow-400"  
-      >
+      <div className="col-span-1 bg-yellow-400"  >
         <Image src={authGirl} alt='sadsad' className='h-full object-cover' />
       </div>
-      <div className='col-span-1 bg-zinc-200 p-10 flex flex-row items-center px-10'>
-        <form>
+      <div className='col-span-1 bg-zinc-200 p-10 flex flex-row justify-center px-10'>
+        <form className='justify-center flex flex-col px-7'>
           <label className='text-2xl font-extrabold block text-center my-5'>
             Join to Advanture!
           </label>

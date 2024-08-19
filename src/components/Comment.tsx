@@ -1,6 +1,6 @@
 "use client"
 import ProfileImage from '../Assets/images/profileImage.jpg'
-
+import Image from 'next/image'
 
 const Comment = () => {
   return (
@@ -18,7 +18,7 @@ const Comment = () => {
         </div>
         <div className="post-author flex items-center">
             <div className="author-info flex flex-col items-end w-14 justify-center">
-                <img src={ProfileImage} alt='muratbenli' className="w-12 h-12 md:w-14 md:h-14 rounded-full" />
+                <Image src={ProfileImage} alt='muratbenli' className="w-12 h-12 md:w-14 md:h-14 rounded-full" />
                 <span className="font-bold text-center text-nowrap text-[13px] md:text-sm">Murat Benli</span>
             </div>
         </div>

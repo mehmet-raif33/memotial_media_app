@@ -88,7 +88,7 @@ const page = () => {
           <div className='p-4 '>
             {/* Message from User 1 */}
             <div className="flex items-start mb-4">
-              <img
+              <Image
                 src="https://via.placeholder.com/40"
                 alt="User 1"
                 width={40} // Görselin genişliği

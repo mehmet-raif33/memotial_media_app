@@ -6,7 +6,7 @@ const Posts = () => {
 
 
     interface PostInterface {
-        image: string
+        image: string | any
         postId: number
         description: string
     }

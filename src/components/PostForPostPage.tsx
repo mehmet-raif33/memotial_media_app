@@ -1,6 +1,6 @@
 "use client"
 import ProfileImage from '../Assets/images/profileImage.jpg'
-
+import Image from 'next/image'
 
 const PostForPostPage = () => {
   return (
@@ -18,7 +18,7 @@ const PostForPostPage = () => {
         </div>
         <div className="post-author flex items-center">
             <div className="author-info flex flex-col items-end w-14 justify-center">
-                <img src={ProfileImage} alt='muratbenli' className="w-14 h-14 rounded-full" />
+                <Image src={ProfileImage} alt='muratbenli' className="w-14 h-14 rounded-full" />
                 <span className="font-bold text-sm  text-center text-nowrap ">Murat Benli</span>
             </div>
         </div>

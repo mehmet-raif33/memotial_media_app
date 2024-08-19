@@ -1,5 +1,6 @@
 "use client"
 import ProfileImage from '../Assets/images/profileImage.jpg'
+import Image from 'next/image'
 
 const Following = () => {
 
@@ -34,7 +35,7 @@ const Following = () => {
         {following.map((follower, index) => (
           <div key={index} className="bg-white p-4 rounded-lg shadow-lg flex flex-col sm:flex-row items-center justify-between">
             <div className="flex items-center mb-4 sm:mb-0">
-              <img src={follower.profilePicture} alt={follower.username} className="w-12 h-12 rounded-full mr-3" />
+              <Image src={follower.profilePicture} alt={follower.username} className="w-12 h-12 rounded-full mr-3" />
               <p className="font-semibold text-lg">{follower.username}</p>
             </div>
             <button className="bg-green-500 text-white py-1 px-3 rounded-lg">
