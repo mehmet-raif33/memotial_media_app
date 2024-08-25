@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "../components/Navbar";
 import { Footer } from "../components/Footer";
+import ClientProvider from "./clientProvider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -19,13 +20,15 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${inter.className} bg-slate-100 `}>
-        <div className="flex flex-col justify-center md:mt-16">
-          <Navbar />
-          <div className="inline-block w-full md:w-3/4 m-auto">
-            {children}
-            <Footer />          
+        <ClientProvider>
+          <div className="flex flex-col justify-center md:mt-16">
+            <Navbar />
+            <div className="inline-block w-full md:w-3/4 m-auto">
+              {children}
+              <Footer />
+            </div>
           </div>
-        </div>
+        </ClientProvider>
       </body>
     </html>
   );
