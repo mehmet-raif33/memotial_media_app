@@ -6,22 +6,50 @@ import authGirl from '../../Assets/images/authGirl.jpg'
 import { GoogleLoginButton } from 'react-social-login-buttons';
 import supabase from '../../supabase/info'
 import { useState } from 'react';
+import { login , logout } from '../../redux/userSession/userSession'
+import { useDispatch } from 'react-redux';
 
 const Page = () => {
-
-  const [datam, setData] = useState('')
-  const provider = 'google'
-
-
+  
+  const dispatch = useDispatch();
+  const [datam, setData] = useState<any>('')
 
   const googleAuthProcess = async () => {
-    await supabase.auth.signInWithOAuth({
-      provider,
-      options: {
-        redirectTo: `http://example.com/auth/callback`,
-      },
-    })
+
+    try {
+      // Google OAuth işlemini başlat
+      const { error: authError } = await supabase.auth.signInWithOAuth({
+        provider: 'google',
+        options: {
+          redirectTo: 'http://example.com/auth/callback',
+        },
+      });
+  
+      // Hata kontrolü
+      if (authError) throw authError;
+
+      const { data: userData } = await supabase.auth.getUser();
+      console.log(userData)
+  
+      // Kullanıcı verisi kontrolü
+      if (userData && userData.user) {
+        // Redux store'u güncelle
+        const userDataForReduxStore = {
+          isUserHere: true,
+          userName: userData.user.id,
+        };
+        dispatch(login(userDataForReduxStore)); 
+  
+      
+      } else {
+        console.error('User data not available.');
+      }
+    } catch (err) {
+      console.log(err);
+    }
+
   }
+  
 
   return (
     <div className='grid grid-flow-col-1 md:grid-cols-2 h-[500px] justify-center'>
@@ -48,7 +76,7 @@ const Page = () => {
                 </span>
               </GoogleLoginButton>     
               <span>
-                {datam}  
+                {datam} 
               </span>       
             </div>
 

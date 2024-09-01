@@ -1,12 +1,10 @@
 'use client'
-import { UseSelector , useDispatch, useSelector } from 'react-redux'
-import type { RootState } from '@reduxjs/toolkit/query';
-import { up , down } from '../../redux/userSession/userSession'
+import { useSelector } from 'react-redux'
+import { RootState } from '@/redux/store'
 
 const Page = () => {
 
-  const dispatch = useDispatch();  
-  const myValue = useSelector((state: RootState) => state.userSession); // 
+  const myValue = useSelector((state: RootState) => state.userSession); // Problem burada
 
 
   return (
@@ -14,15 +12,12 @@ const Page = () => {
       <h1 className="w-full">
         Homepage 
         {
-          myValue
+          myValue.isUserHere ? 
+          <div>Welcome {myValue.userName}!!</div> 
+          : 
+          <div>Please join us!</div>
         }
       </h1>
-      <button onClick={() => dispatch(up(5))} className='bg-sky-500 text-white p-5 rounded-md transition-all hover:scale-105'>
-        Up
-      </button>
-      <button onClick={() => dispatch(down(5))} className='bg-red-500 text-white p-5 rounded-md transition-all hover:scale-105'>
-        Down
-      </button>
     </div>
   )
 }
