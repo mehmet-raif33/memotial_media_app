@@ -33,9 +33,9 @@ const Page = () => {
                     .from('users')
                     .insert({
                     email: userData.user.email,
-                    full_name: userData.user.user_metadata.full_name,
-                    profile_image: 'https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-                    provider: 'google',
+                        full_name: userData.user.user_metadata.full_name,
+                        profile_image: 'https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+                        provider: 'google',
                     });
 
                 if (insertError) {

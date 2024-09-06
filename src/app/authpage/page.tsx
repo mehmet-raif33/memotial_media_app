@@ -14,7 +14,7 @@ const Page = () => {
         await supabase.auth.signInWithOAuth({
           provider: 'google',
           options: {
-            redirectTo: 'http://localhost:3000/auth'
+            redirectTo: 'https://memotial-media-app.vercel.app/auth'
           }
         });
       } catch (err) {
