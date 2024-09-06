@@ -6,7 +6,7 @@ interface user {
     userName: null | string
 }
 
-const initialState: user = {
+export const initialState: user = {
     isUserHere : false,
     userName: null,
 }
@@ -18,8 +18,8 @@ const userSession = createSlice({
         login: ( state , action: PayloadAction<user> ) => (
             state = action.payload
         ),
-        logout: ( state , action: PayloadAction<user> ) => (
-            state = action.payload
+        logout: ( state ) => (
+            state = initialState
         ),
     }
 })

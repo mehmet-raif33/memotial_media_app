@@ -14,9 +14,12 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import { usePathname } from "next/navigation";
+import { useSelector, UseSelector } from "react-redux";
+import { RootState } from "../redux/store";
 
 export const Navbar = () => {
   const [logData, setLogData] = useState(true);
+  const userSession = useSelector((state: RootState) => state.userSession.isUserHere)
   const pathName = usePathname();
 
   const LogInNavLinkList = [
@@ -51,16 +54,19 @@ export const Navbar = () => {
       path: "/homepage",
       ActiveImageUrl: homepageClicked,
       PasifImageUrl: homepage,
+      isActive: pathName === "/homepage",
     },
     {
-      path: "/auth",
+      path: "/authpage",
       ActiveImageUrl: addUserClicked,
       PasifImageUrl: addUser,
+      isActive: pathName === "/authpage",
     },
     {
       path: "/liveflow",
       ActiveImageUrl: trendClicked,
       PasifImageUrl: trend,
+      isActive: pathName === "/liveflow",
     },
   ];
 
@@ -75,7 +81,7 @@ export const Navbar = () => {
       </div>
 
       <div className="md:mx-10 w-full md:w-auto justify-around md:justify-center md:my-auto flex flex-row items-center">
-        {logData
+        {userSession
           ? LogInNavLinkList.map((a) => (
               <Link href={a.path} key={a.path}>
                 <Image
@@ -88,7 +94,7 @@ export const Navbar = () => {
           : LogOutNavLinkList.map((a) => (
               <Link href={a.path} key={a.path}>
                 <Image
-                  src={a.PasifImageUrl}
+                  src={a.isActive ? a.ActiveImageUrl : a.PasifImageUrl}
                   alt={a.path} // Alt açıklamasını daha dinamik hale getirdim
                   className="md:h-[40px] h-[35px] md:w-[40px] w-[35px] ml-3"
                 />
