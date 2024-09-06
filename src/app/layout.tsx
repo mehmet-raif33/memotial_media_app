@@ -5,6 +5,8 @@ import { Navbar } from "../components/Navbar";
 import { Footer } from "../components/Footer";
 import ClientProvider from "./clientProvider";
 
+import { SpeedInsights } from "@vercel/speed-insights/next"
+
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -19,6 +21,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <SpeedInsights/>
       <body className={`${inter.className} bg-slate-100 `}>
         <ClientProvider>
           <div className="flex flex-col justify-center md:mt-16">
